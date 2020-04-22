@@ -1,0 +1,169 @@
+html,
+body {
+	font-family: "VT323", "Do Hyeon", serif;
+}
+// common class style
+.a11y-hidden {
+	@include a11y-hidden;
+}
+.trs-300ms {
+	@include trs-type1;
+}
+.clearfix::after {
+	@include clearfix;
+}
+.hide {
+	@include hide;
+}
+.dimmed {
+	@include dimmed-popup;
+}
+
+// icon
+.icon {
+	display: inline-block;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	&.icon--new-tab {
+		background-image: url("../assets/img/new_tab.svg");
+		width: 1rem;
+		height: 1rem;
+		vertical-align: text-top;
+		margin-left: 5px;
+	}
+
+	&.icon--loading {
+		background-image: url("../assets/img/loading.svg");
+		width: 100px;
+		height: 100px;
+	}
+
+	&.icon--logo-red {
+		width: 70px;
+		vertical-align: middle;
+	}
+
+	&.icon--scrollable {
+		background-image: url("../assets/img/scrollable.svg");
+		width: 50px;
+		height: 50px;
+	}
+
+	&.icon--swipeable {
+		background-image: url("../assets/img/swipe.svg");
+		width: 50px;
+		height: 50px;
+	}
+}
+
+#pageLoading {
+	position: relative;
+	width: 100%;
+	height: 100%;
+
+	.icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+#pageLoaded {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	color: #000;
+}
+
+#header {
+	position: static;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 20px 5%;
+
+	#gnb {
+		ul {
+			li {
+				float: left;
+				position: relative;
+
+				&:not(:last-child):after {
+					content: "|";
+					margin: 0 10px;
+					color: #fff;
+				}
+
+				a {
+					color: #fff;
+					@include trs-type1;
+
+					&:hover {
+						color: $themeColor;
+					}
+				}
+			}
+
+			.study_list--wrap {
+				position: absolute;
+				top: 20px;
+				right: 30px;
+			}
+		}
+	}
+}
+
+#main {
+	// padding-top: 63.75px;
+	flex: 1;
+}
+
+#footer {
+	color: #fff;
+	font-style: normal;
+	padding-top: 40px;
+	padding-bottom: 50px;
+	box-sizing: border-box;
+	display: flex;
+	align-items: flex-end;
+	height: 100vh;
+
+	address {
+		font-style: normal;
+		width: 100%;
+
+		b {
+			display: block;
+			font-size: 18vw;
+			line-height: 15vw;
+			text-align: right;
+		}
+
+		p {
+			margin-top: 20px;
+			font-size: 60px;
+			line-height: 133%;
+			text-decoration: underline;
+
+			&.email {
+				margin-top: 10vh;
+			}
+		}
+		a {
+			color: inherit;
+
+			.icon--new-tab {
+				width: 60px;
+				height: 60px;
+				vertical-align: middle;
+			}
+		}
+	}
+}

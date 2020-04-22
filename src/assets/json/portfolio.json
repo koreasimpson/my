@@ -1,0 +1,250 @@
+{
+	"beusable": {
+		"poaster": {
+			"pageName": "Beusable Tool",
+			"detail": {
+				"period": "2019.01 ~ 2019.10",
+				"contribution": "UI 및 프론트엔드 작업",
+				"env": "IntelliJ",
+				"useSkill": "[HTML5, CSS3, SASS, ~ES6, Vue]",
+				"useTool": "['Zeplin', 'Postman', 'Gitlab', 'Zira']",
+				"note": ["로그인 페이지 이외에는 로그인 이후 확인할 수 있는 페이지입니다."]
+			}
+		},
+		"signin": {
+			"pageName": "로그인",
+			"detail": {
+				"pageDesc": ["로그인, 회원가입, 비밀번호 찾기 기능 구현", "폼 컨텐츠 유효성 검사"],
+				"url": "https://tool.beusable.net/signin"
+			}
+		},
+		"dashboard": {
+			"pageName": "대시보드",
+			"detail": {
+				"pageDesc": ["리스트 렌더링 기능 구현"],
+				"url": "https://tool.beusable.net/dashboard"
+			}
+		},
+		"dashboardEdit": {
+			"pageName": "대시보드 - 수정모드",
+			"detail": {
+				"pageDesc": ["대시보드 페이지에서 수정 모드 기능 구현"],
+				"url": "https://tool.beusable.net/dashboard"
+			}
+		},
+		"register": {
+			"pageName": "페이지 등록",
+			"detail": {
+				"pageDesc": ["페이지 등록 기능 구현"],
+				"url": "https://tool.beusable.net/page/add"
+			}
+		},
+		"myInfo": {
+			"pageName": "내 정보",
+			"detail": {
+				"pageDesc": ["유저 정보 수정 기능 구현"],
+				"url": "https://tool.beusable.net/user/myinformation"
+			}
+		},
+		"managePlan": {
+			"pageName": "플랜 정보",
+			"detail": {
+				"pageDesc": ["레이아웃 및 UI 작업"],
+				"url": "https://tool.beusable.net/user/manageplan"
+			}
+		},
+		"billing": {
+			"pageName": "결제 정보",
+			"detail": {
+				"pageDesc": ["레이아웃 및 UI 작업"],
+				"url": "https://tool.beusable.net/user/billing"
+			}
+		},
+		"ipblock": {
+			"pageName": "IP Block",
+			"detail": {
+				"pageDesc": ["IP Block 기능 구현"],
+				"url": "https://tool.beusable.net/user/ipblocking"
+			}
+		},
+		"reportingHeatmap": {
+			"pageName": "Reporting Heatmap",
+			"detail": {
+				"pageDesc": ["레이아웃 및 UI 작업"],
+				"url": "https://tool.beusable.net/report/{사용자정보}/"
+			}
+		},
+		"analytics": {
+			"pageName": "Analytics",
+			"detail": {
+				"pageDesc": ["레이아웃 및 UI 작업"],
+				"url": "https://tool.beusable.net/report/{사용자정보}/analytics"
+			}
+		},
+		"comparing": {
+			"pageName": "Comparing Referrers",
+			"detail": {
+				"pageDesc": ["레이아웃 및 UI 작업"],
+				"url": "https://tool.beusable.net/report/{사용자정보}/referrers"
+			}
+		},
+		"segmentCTA": {
+			"pageName": "Segmenting CTA",
+			"detail": {
+				"pageDesc": ["레이아웃 및 UI 작업"],
+				"url": "https://tool.beusable.net/report/{사용자정보}/cta"
+			}
+		},
+		"abtest": {
+			"pageName": "A/B Testing",
+			"detail": {
+				"pageDesc": ["레이아웃 및 UI 작업, 데이터 가공 및 차트 렌더링 작업"],
+				"url": "https://tool.beusable.net/report/{사용자정보}/ab"
+			}
+		},
+		"funnel": {
+			"pageName": "Funnels",
+			"detail": {
+				"pageDesc": ["레이아웃 및 UI 작업"],
+				"url": "https://tool.beusable.net/report/{사용자정보}/funnel"
+			}
+		}
+	},
+	"beusably": {
+		"landing": {
+			"poaster": {
+				"pageName": "Beusably",
+				"detail": {
+					"period": "2018.07 ~ 2018.09",
+					"contribution": "UI 및 인터랙션 작업%",
+					"env": "IntelliJ",
+					"useSkill": "['HTML5', 'CSS3', 'ES5', 'jQuery']",
+					"useTool": "['Zeplin', 'Postman', 'Gitlab', 'Zira']",
+					"pageDesc": ["반응형 페이지 작업"],
+					"url": "http://www.beusably.net/"
+				}
+			},
+			"main": {
+				"pageName": "메인",
+				"detail": {
+					"pageDesc": ["뷰저블리 서비스 소개 컨텐츠 UI 작업"],
+					"url": "http://www.beusably.net/"
+				}
+			},
+			"pricing": {
+				"pageName": "가격 정보",
+				"detail": {
+					"pageDesc": ["뷰저블리 플랜별 가격 정보 UI 작업", "로그인 여부에 따른 다른 UI 작업"],
+					"url": "http://www.beusably.net/pricing"
+				}
+			},
+			"support": {
+				"pageName": "고객지원",
+				"detail": {
+					"pageDesc": ["뷰저블리 FAQ, 공지사항, 언론보도 UI 작업"],
+					"url": "http://www.beusably.net/support"
+				}
+			},
+			"terms": {
+				"pageName": "이용약관",
+				"detail": {
+					"pageDesc": ["뷰저블리 이용약관 페이지, 서비스 약관 정보 UI 작업"],
+					"url": "http://www.beusably.net/terms"
+				}
+			},
+			"privacy": {
+				"pageName": "개인정보",
+				"detail": {
+					"pageDesc": ["뷰저블리 개인정보 취급방침 페이지, 서비스 개인정보 취급방침 UI 작업"],
+					"url": "http://www.beusably.net/privacy"
+				}
+			},
+			"join": {
+				"pageName": "회원가입",
+				"detail": {
+					"pageDesc": ["가입 및 Validation 기능 구현"],
+					"url": "http://www.beusably.net/signup"
+				}
+			},
+			"login": {
+				"pageName": "로그인",
+				"detail": {
+					"pageDesc": ["로그인 및 Validation 기능 구현"],
+					"url": "http://www.beusably.net/signin"
+				}
+			}
+		},
+		"tool": {
+			"poaster": {
+				"pageName": "Beusably Tool",
+				"detail": {
+					"period": "2018.07 ~ 2018.09",
+					"contribution": "UI 및 프론트엔드 작업",
+					"env": "IntelliJ",
+					"useSkill": "['HTML5', 'CSS3', 'ES5', 'jQuery', 'Anguler JS']",
+					"useTool": "['Zeplin', 'Postman', 'Gitlab', 'Zira']",
+					"note": [
+						"뷰저블리 툴 페이지 UI 작업(Only DeskTop view)",
+						"실제 다른 사이트 위에 렌더링 되는 컨트롤러 UI 작업"
+					]
+				}
+			},
+			"dashboard": {
+				"pageName": "대시보드",
+				"detail": {
+					"pageDesc": ["UI 및 리스트 렌더링 기능 구현"],
+					"url": "http://www.beusably.net/tool/"
+				}
+			},
+			"register": {
+				"pageName": "페이지 등록",
+				"detail": {
+					"pageDesc": ["UI 및 페이지 등록 기능 구현"],
+					"url": "http://www.beusably.net/tool/registration"
+				}
+			},
+			"ipblock": {
+				"pageName": "IP Block",
+				"detail": {
+					"pageDesc": ["UI 및 IP Block 기능 구현"],
+					"url": "http://www.beusably.net/tool/ip/ipblock"
+				}
+			},
+			"planBilling": {
+				"pageName": "플랜 및 결제 정보",
+				"detail": {
+					"pageDesc": ["레이아웃 및 UI 작업"],
+					"url": "http://www.beusably.net/tool/billing"
+				}
+			},
+			"myInfo": {
+				"pageName": "내 정보",
+				"detail": {
+					"pageDesc": ["UI 및 유저 정보 수정 기능 구현"],
+					"url": "http://www.beusably.net/tool/mypage"
+				}
+			},
+			"withdraw": {
+				"pageName": "회원 탈퇴",
+				"detail": {
+					"pageDesc": ["UI 및 회원 탈퇴 기능 구현"],
+					"url": "http://www.beusably.net/tool/mypage"
+				}
+			},
+			"controller": {
+				"pageName": "컨트롤러",
+				"detail": {
+					"pageDesc": ["실제 분석 페이지 위에 렌더링 되는 컨트롤러 UI 작업"],
+					"url": "없음"
+				}
+			},
+			"timeMachine": {
+				"pageName": "컨트롤러 - 타임머신",
+				"detail": {
+					"pageDesc": ["캘린더 라이브러리 및 페이지네이션 라이브러리를 적용한 리스트 렌더링 작업"],
+					"url": "없음"
+				}
+			}
+		}
+	}
+}

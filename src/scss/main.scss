@@ -1,0 +1,110 @@
+@import "./nomalize.scss";
+@import "./variable.scss";
+@import "./mixin.scss";
+@import "./common.scss";
+
+#header {
+	position: absolute;
+
+	.logo {
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+	}
+}
+#main {
+	section {
+		position: relative;
+		min-height: 100vh;
+	}
+	.section1 {
+		min-height: auto;
+		padding-top: 100px;
+		box-sizing: border-box;
+		background-color: black;
+		.intro {
+			font-weight: bold;
+			color: #fff;
+			font-size: 15vw;
+
+			.name {
+				text-align: right;
+
+				mark {
+					position: relative;
+					background: none;
+					color: inherit;
+					display: block;
+
+					&:hover {
+						color: rgba(242, 60, 73, 1);
+						&::before {
+							content: "a.k.a ";
+							font-size: 1vw;
+						}
+					}
+				}
+			}
+		}
+	}
+	.section2 {
+		padding-top: 100px;
+		margin: 0 auto;
+		width: 80%;
+
+		.profile {
+			figure {
+				position: relative;
+				width: 40vw;
+				margin: 0 auto;
+				overflow: hidden;
+
+				video,
+				img {
+					width: 100%;
+				}
+
+				img {
+					position: absolute;
+					top: 0;
+					left: 0;
+					transition: all 12s;
+
+					&:hover {
+						opacity: 0;
+					}
+				}
+			}
+		}
+
+		.introduce {
+			position: relative;
+			color: #fff;
+			font-size: 2rem;
+			width: 50%;
+			float: right;
+			text-align: left;
+
+			b {
+				position: absolute;
+				top: 64%;
+				left: -75%;
+				transform: translateY(-50%);
+				font-size: 62rem;
+				color: #fff;
+				font-family: serif;
+			}
+
+			p {
+				margin-top: 40px;
+				line-height: 1.4;
+			}
+
+			span:hover {
+				strong {
+					color: yellowgreen;
+				}
+			}
+		}
+	}
+}
