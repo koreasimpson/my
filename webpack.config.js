@@ -64,11 +64,17 @@ module.exports = {
 		}),
 		new HtmlWebpackPlugin({
 			template: "./public/main/index.html",
+			templateParameters: {
+				path: process.env.NODE_ENV === "production" ? "/my" : null
+			},
 			filename: "./main/index.html",
 			chunks: ["main/main"]
 		}),
 		new HtmlWebpackPlugin({
 			template: "./public/portfolio/index.html",
+			templateParameters: {
+				path: process.env.NODE_ENV === "production" ? "/my" : null
+			},
 			filename: "./portfolio/index.html",
 			chunks: ["portfolio/portfolio"]
 		}),

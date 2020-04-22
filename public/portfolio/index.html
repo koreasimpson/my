@@ -24,7 +24,23 @@
 			<i class="icon icon--loading"></i>
 		</div>
 		<div id="pageLoaded" class="hide">
-			<header id="header"></header>
+			<header id="header">
+				<h1 class="a11y-hidden">구공찬</h1>
+				<nav id="gnb">
+					<ul class="clearfix">
+						<li><a href="<%= path %>/main/">home</a></li>
+						<li><a href="<%= path %>/portfolio/">portfolio</a></li>
+						<li class="gnb_item study">
+							<a href="#" class="open-popup-layer">Toy</a>
+							<ul class="study_list--wrap popup-layer arrow-top-right">
+								<li>
+									<a href="#"></a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</header>
 			<main id="main">
 				<div class="scrollable">
 					<i class="icon icon--scrollable"></i>
@@ -106,7 +122,6 @@
 					</div>
 				</div>
 			</main>
-			<footer id="footer" class="a11y-hidden"></footer>
 		</div>
 	</body>
 </html>

@@ -1,23 +1,4 @@
 window.addEventListener("load", function() {
-	// common component fetch
-	fetch("/header.html")
-		.then(response => {
-			return response.text()
-		})
-		.then(data => {
-			document.querySelector("#header").innerHTML = data
-			fetch("/footer.html")
-				.then(response => {
-					return response.text()
-				})
-				.then(data => {
-					document.querySelector("#footer").innerHTML = data
-					ready()
-				})
-		})
-})
-
-function ready() {
 	console.log(
 		"%c Contact : 010 - 8423 - 6277 ",
 		"border: 5px dotted #CAC327; padding: 10px; box-sizing: border-box; color:#CAC327;font-family: 'Open Sans', system-ui;font-size:2rem;-webkit-text-stroke: 1px black;font-weight:bold"
@@ -72,4 +53,4 @@ function ready() {
 			}
 		})
 	}
-}
+})
