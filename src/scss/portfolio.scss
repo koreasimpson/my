@@ -78,11 +78,6 @@ body {
 			width: 80%;
 			height: 50%;
 		}
-		.portfolio-cover {
-			.content {
-				@include pos-x-y-center;
-			}
-		}
 	}
 
 	&:not(.poaster) {
@@ -104,12 +99,10 @@ body {
 					rgba(255, 255, 255, 0) 100%
 				);
 			}
+		}
 
-			.content {
-				position: absolute;
-				top: 20px;
-				left: 20px;
-			}
+		.page-img img {
+			width: 100%;
 		}
 
 		.btn-toggle-cover {
@@ -140,7 +133,7 @@ body {
 		width: 100%;
 
 		img {
-			width: 100%;
+			width: 0;
 		}
 	}
 }
@@ -155,10 +148,11 @@ body {
 	height: 100%;
 
 	.content {
-		transition: all 0.7s;
-
 		.title {
 			color: #131313;
+			text-shadow: -1px -1px 0 transparent, 1px -1px 0 transparent, -1px 1px 0 transparent,
+				1px 1px 0 transparent;
+			transition: all 0.7s;
 			strong {
 				display: block;
 				font-size: 5rem;
@@ -170,6 +164,7 @@ body {
 			color: #fff;
 			font-size: 1.2rem;
 			line-height: 1.8rem;
+			white-space: nowrap;
 		}
 	}
 }
@@ -224,6 +219,9 @@ body {
 }
 
 .beusable {
+	&:not(.poaster) .portfolio-cover .title {
+		color: $beusableColor;
+	}
 	.portfolio-cover .title {
 		text-shadow: -1px -1px 0 $beusableColor, 1px -1px 0 $beusableColor, -1px 1px 0 $beusableColor,
 			1px 1px 0 $beusableColor;
@@ -235,7 +233,11 @@ body {
 		}
 	}
 }
+
 .beusably.landing {
+	&:not(.poaster) .portfolio-cover .title {
+		color: $beusablyColor;
+	}
 	.portfolio-cover .title {
 		text-shadow: -1px -1px 0 $beusablyColor, 1px -1px 0 $beusablyColor, -1px 1px 0 $beusablyColor,
 			1px 1px 0 $beusablyColor;
@@ -244,9 +246,12 @@ body {
 		border-color: $beusablyColor;
 	}
 }
+
 .beusably.tool {
-	.portfolio-cover .title {
+	&:not(.poaster) .portfolio-cover .title {
 		color: $beusablyToolColor;
+	}
+	.portfolio-cover .title {
 		text-shadow: -1px -1px 0 $beusablyToolColor, 1px -1px 0 $beusablyToolColor,
 			-1px 1px 0 $beusablyToolColor, 1px 1px 0 $beusablyToolColor;
 	}
