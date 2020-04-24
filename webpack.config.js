@@ -2,13 +2,13 @@ const path = require("path")
 const webpack = require("webpack")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 
 const mode = process.env.NODE_ENV || "development"
 
 module.exports = {
 	mode,
 	entry: {
-		"intro/intro": "./src/js/intro.js",
 		"main/main": "./src/js/main.js",
 		"portfolio/portfolio": "./src/js/portfolio.js"
 	},
@@ -58,16 +58,18 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: "./public/intro/index.html",
-			filename: "index.html",
-			chunks: ["intro/intro"]
-		}),
-		new HtmlWebpackPlugin({
 			template: "./public/main/index.html",
+			filename: "index.html",
 			templateParameters: {
 				path: process.env.NODE_ENV === "production" ? "/my" : null
 			},
-			filename: "./main/index.html",
+			minify:
+				process.env.NODE_ENV === "production"
+					? {
+							collapseWhitespace: true, // 빈 공간(들여쓰기,띄어쓰기,줄바꿈) 제거
+							removeComments: true // 주석 제거
+					  }
+					: false,
 			chunks: ["main/main"]
 		}),
 		new HtmlWebpackPlugin({
@@ -76,8 +78,17 @@ module.exports = {
 				path: process.env.NODE_ENV === "production" ? "/my" : null
 			},
 			filename: "./portfolio/index.html",
+			minify:
+				process.env.NODE_ENV === "production"
+					? {
+							collapseWhitespace: true, // 빈 공간(들여쓰기,띄어쓰기,줄바꿈) 제거
+							removeComments: true // 주석 제거
+					  }
+					: false,
 			chunks: ["portfolio/portfolio"]
 		}),
-		...(mode === "production" ? [new MiniCssExtractPlugin({ filename: "[name].css" })] : [])
+		...(mode === "production"
+			? [new CleanWebpackPlugin(), new MiniCssExtractPlugin({ filename: "[name].css" })]
+			: [])
 	]
 }
