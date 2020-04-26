@@ -1,32 +1,36 @@
-//  페이지 정보 수만큼 nav li 요소 생성
 const createNavigationFn = (pageData, targetPortfolio, imgData) => {
 	const portfolioPageList = []
 	const navContainer = targetPortfolio.querySelector(".portfolio-navigation")
+
+	const pageImgWrapper = targetPortfolio.querySelector(".page-img-wrapper")
+	const pageImg = targetPortfolio.querySelector(".page-img")
+	pageImgWrapper.innerHTML = ""
 
 	for (let page in pageData) {
 		portfolioPageList.push(page)
 	}
 
 	portfolioPageList.forEach((page, index) => {
+		const clone = pageImg.cloneNode(true)
+		pageImgWrapper.appendChild(clone)
+		page === "poaster"
+			? clone.querySelector("img").setAttribute("src", "/")
+			: clone.querySelector("img").setAttribute("src", imgData[page])
+
 		const listElement = document.createElement("li")
 		listElement.textContent = page
-
 		listElement.classList.add(`page${index}`)
-
 		listElement.addEventListener("click", e => {
-			handleNavEvent(e, index, page, pageData, targetPortfolio, imgData)
+			handleNavEvent(e, page, pageData, targetPortfolio, pageImgWrapper, clone)
 		})
-
 		navContainer.appendChild(listElement)
 	})
 	// firstNavList click
 	navContainer.querySelector("li").click()
 }
 
-// nav li 요소 이벤트 처리
-const handleNavEvent = (e, index, page, pageData, targetPortfolio, imgData) => {
+const handleNavEvent = (e, page, pageData, targetPortfolio, pageImgWrapper, clone) => {
 	let navContainer = targetPortfolio.querySelector(".portfolio-navigation")
-	// nav is-active class toggle
 	if (!e.target.classList.contains("is-active")) {
 		const navList = navContainer.querySelectorAll("li")
 		navList.forEach(item => {
@@ -34,28 +38,21 @@ const handleNavEvent = (e, index, page, pageData, targetPortfolio, imgData) => {
 		})
 		e.target.classList.add("is-active")
 	}
-
-	// set pageImg
-	setSelectedPageImg(page, targetPortfolio, imgData)
-	// set PageDesc
-	setSelectedPageDesc(page, pageData, targetPortfolio)
-}
-
-// set PageData
-const setSelectedPageImg = (page, targetPortfolio, imgData) => {
-	const imgElement = targetPortfolio.querySelector("img")
-
-	if (page === "poaster") {
-		targetPortfolio.classList.add("poaster")
-		imgElement.setAttribute("src", "/")
-	} else {
-		targetPortfolio.classList.remove("poaster")
-		imgElement.setAttribute("src", imgData[page])
-	}
+	setSelectedPageDesc(page, pageData, targetPortfolio, pageImgWrapper, clone)
 }
 
 // Update desc
-const setSelectedPageDesc = (page, pageData, targetPortfolio) => {
+const setSelectedPageDesc = (page, pageData, targetPortfolio, pageImgWrapper, clone) => {
+	page === "poaster"
+		? targetPortfolio.classList.add("poaster")
+		: targetPortfolio.classList.remove("poaster")
+
+	pageImgWrapper.querySelectorAll(".page-img").forEach(list => {
+		list.classList.remove("is-show")
+	})
+
+	clone.classList.add("is-show")
+
 	const pageDescElement = targetPortfolio.querySelector(".portfolio-cover .desc")
 	const pageDescDetail = pageData[page].detail
 

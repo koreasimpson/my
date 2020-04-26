@@ -25,7 +25,7 @@
 		.intro {
 			font-weight: bold;
 			color: #fff;
-			font-size: 15vw;
+			font-size: 15rem;
 
 			.name {
 				text-align: right;
@@ -40,7 +40,7 @@
 						color: rgba(242, 60, 73, 1);
 						&::before {
 							content: "a.k.a ";
-							font-size: 1vw;
+							font-size: 1rem;
 						}
 					}
 				}
@@ -50,50 +50,28 @@
 	.section2 {
 		padding-top: 100px;
 		margin: 0 auto;
-		width: 80%;
+		display: flex;
 
 		.profile {
+			flex: 2;
 			figure {
 				position: relative;
-				width: 40vw;
+				width: 40rem;
 				margin: 0 auto;
 				overflow: hidden;
 
-				video,
 				img {
 					width: 100%;
-				}
-
-				img {
-					position: absolute;
-					top: 0;
-					left: 0;
-					transition: all 12s;
-
-					&:hover {
-						opacity: 0;
-					}
 				}
 			}
 		}
 
 		.introduce {
+			flex: 1;
 			position: relative;
 			color: #fff;
 			font-size: 2rem;
-			width: 50%;
-			float: right;
 			text-align: left;
-
-			b {
-				position: absolute;
-				top: 64%;
-				left: -75%;
-				transform: translateY(-50%);
-				font-size: 62rem;
-				color: #fff;
-				font-family: serif;
-			}
 
 			p {
 				margin-top: 40px;

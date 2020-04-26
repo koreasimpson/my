@@ -101,8 +101,14 @@ body {
 			}
 		}
 
-		.page-img img {
-			width: 100%;
+		.page-img {
+			display: none;
+			&.is-show {
+				display: block;
+				img {
+					width: 100%;
+				}
+			}
 		}
 
 		.btn-toggle-cover {
@@ -222,7 +228,7 @@ body {
 	&:not(.poaster) .portfolio-cover .title {
 		color: $beusableColor;
 	}
-	.portfolio-cover .title {
+	&.poaster .portfolio-cover .title {
 		text-shadow: -1px -1px 0 $beusableColor, 1px -1px 0 $beusableColor, -1px 1px 0 $beusableColor,
 			1px 1px 0 $beusableColor;
 	}
@@ -238,7 +244,7 @@ body {
 	&:not(.poaster) .portfolio-cover .title {
 		color: $beusablyColor;
 	}
-	.portfolio-cover .title {
+	&.poaster .portfolio-cover .title {
 		text-shadow: -1px -1px 0 $beusablyColor, 1px -1px 0 $beusablyColor, -1px 1px 0 $beusablyColor,
 			1px 1px 0 $beusablyColor;
 	}
@@ -251,7 +257,7 @@ body {
 	&:not(.poaster) .portfolio-cover .title {
 		color: $beusablyToolColor;
 	}
-	.portfolio-cover .title {
+	&.poaster .portfolio-cover .title {
 		text-shadow: -1px -1px 0 $beusablyToolColor, 1px -1px 0 $beusablyToolColor,
 			-1px 1px 0 $beusablyToolColor, 1px 1px 0 $beusablyToolColor;
 	}

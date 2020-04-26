@@ -19,6 +19,11 @@ body {
 	@include dimmed-popup;
 }
 
+// layout
+body {
+	min-width: 1024px;
+}
+
 // icon
 .icon {
 	display: inline-block;
