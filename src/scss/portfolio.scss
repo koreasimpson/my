@@ -155,6 +155,8 @@ body {
 
 	.content {
 		.title {
+			margin-top: 30px;
+			text-align: center;
 			color: #131313;
 			text-shadow: -1px -1px 0 transparent, 1px -1px 0 transparent, -1px 1px 0 transparent,
 				1px 1px 0 transparent;
@@ -167,6 +169,8 @@ body {
 		}
 
 		.desc {
+			margin-top: 50px;
+			margin-left: 50px;
 			color: #fff;
 			font-size: 1.2rem;
 			line-height: 1.8rem;

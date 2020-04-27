@@ -78,6 +78,10 @@
 				line-height: 1.4;
 			}
 
+			p:nth-child(1) {
+				margin-top: 0;
+			}
+
 			span:hover {
 				strong {
 					color: yellowgreen;
