@@ -95,8 +95,8 @@ body {
 	padding: 20px 5%;
 
 	#gnb {
-		ul {
-			li {
+		& > ul {
+			.gnb-item {
 				float: left;
 				position: relative;
 
@@ -106,11 +106,13 @@ body {
 					color: #fff;
 				}
 
-				a {
+				& > a {
 					color: #fff;
+					text-transform: uppercase;
 					@include trs-type1;
 
-					&:hover {
+					&:hover,
+					&:focus {
 						color: $themeColor;
 					}
 				}
@@ -118,8 +120,18 @@ body {
 
 			.study_list--wrap {
 				position: absolute;
-				top: 20px;
-				right: 30px;
+				top: 30px;
+				right: 0px;
+				@include speech-bubble;
+
+				&.is-show {
+					@include speech-bubble-show;
+				}
+
+				li {
+					padding: 5px 15px;
+					border-bottom: 1px solid #000;
+				}
 			}
 		}
 	}

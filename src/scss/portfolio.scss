@@ -206,24 +206,28 @@ body {
 
 	li {
 		flex: 1;
-		text-align: center;
-		box-sizing: border-box;
-		padding: 20px 10px 22px;
-		cursor: pointer;
-		color: #cccccc;
-		border-bottom: 2px solid transparent;
 		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
 		@include trs-type1;
 
-		&:not(.is-active):hover {
-			color: #fff;
+		&:not(.is-active) button:hover,
+		&:not(.is-active) button:focus {
 			background-color: rgba(0, 0, 0, 0.2);
 		}
 
-		&.is-active {
+		&.is-active button {
 			pointer-events: none;
+		}
+
+		button {
+			display: inline-block;
+			width: 100%;
+			border-bottom: 2px solid transparent;
+			color: #cccccc;
+			box-sizing: border-box;
+			padding: 20px 10px 22px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
 		}
 	}
 }
@@ -237,9 +241,16 @@ body {
 			1px 1px 0 $beusableColor;
 	}
 	.portfolio-navigation li {
+		&:not(.is-active) button:hover,
+		&:not(.is-active) button:focus {
+			color: $beusableColor;
+		}
+
 		&.is-active {
-			border-color: $beusableColor;
 			flex: 2;
+			button {
+				border-color: $beusableColor;
+			}
 		}
 	}
 }
@@ -252,8 +263,17 @@ body {
 		text-shadow: -1px -1px 0 $beusablyColor, 1px -1px 0 $beusablyColor, -1px 1px 0 $beusablyColor,
 			1px 1px 0 $beusablyColor;
 	}
-	.portfolio-navigation li.is-active {
-		border-color: $beusablyColor;
+	.portfolio-navigation li {
+		&:not(.is-active) button:hover,
+		&:not(.is-active) button:focus {
+			color: $beusablyColor;
+		}
+
+		&.is-active {
+			button {
+				border-color: $beusablyColor;
+			}
+		}
 	}
 }
 
@@ -265,7 +285,16 @@ body {
 		text-shadow: -1px -1px 0 $beusablyToolColor, 1px -1px 0 $beusablyToolColor,
 			-1px 1px 0 $beusablyToolColor, 1px 1px 0 $beusablyToolColor;
 	}
-	.portfolio-navigation li.is-active {
-		border-color: $beusablyToolColor;
+	.portfolio-navigation li {
+		&:not(.is-active) button:hover,
+		&:not(.is-active) button:focus {
+			color: $beusablyToolColor;
+		}
+
+		&.is-active {
+			button {
+				border-color: $beusablyToolColor;
+			}
+		}
 	}
 }

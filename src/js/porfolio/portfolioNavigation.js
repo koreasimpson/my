@@ -18,25 +18,28 @@ const createNavigationFn = (pageData, targetPortfolio, imgData) => {
 			: clone.querySelector("img").setAttribute("src", imgData[page])
 
 		const listElement = document.createElement("li")
-		listElement.textContent = page
+		const buttonElement = document.createElement("button")
+
+		listElement.appendChild(buttonElement)
 		listElement.classList.add(`page${index}`)
 		listElement.addEventListener("click", e => {
 			handleNavEvent(e, page, pageData, targetPortfolio, pageImgWrapper, clone)
 		})
+		buttonElement.textContent = page
 		navContainer.appendChild(listElement)
 	})
 	// firstNavList click
-	navContainer.querySelector("li").click()
+	navContainer.querySelector("li button").click()
 }
 
 const handleNavEvent = (e, page, pageData, targetPortfolio, pageImgWrapper, clone) => {
 	let navContainer = targetPortfolio.querySelector(".portfolio-navigation")
-	if (!e.target.classList.contains("is-active")) {
+	if (!e.target.parentNode.classList.contains("is-active")) {
 		const navList = navContainer.querySelectorAll("li")
 		navList.forEach(item => {
 			item.classList.remove("is-active")
 		})
-		e.target.classList.add("is-active")
+		e.target.parentNode.classList.add("is-active")
 	}
 	setSelectedPageDesc(page, pageData, targetPortfolio, pageImgWrapper, clone)
 }

@@ -5,7 +5,7 @@ window.addEventListener("load", function() {
 	)
 
 	let body = document.querySelector("body")
-	let lnbItemStudy = document.querySelector(".gnb_item.study a")
+	let lnbItemStudy = document.querySelector(".gnb-item.study a")
 	let studyList = document.querySelector(".study_list--wrap")
 
 	let allPopupLayer = document.querySelectorAll(".popup-layer")
