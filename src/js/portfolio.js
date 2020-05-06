@@ -16,8 +16,23 @@ const beusablyData = jsonData.beusably.landing
 const beusablyToolData = jsonData.beusably.tool
 
 document.addEventListener("DOMContentLoaded", function() {
+	let isFirstShowSlide = {
+		index1: true,
+		index2: true
+	}
+
 	const portfolioSlide = new DoSlide(".portfolio-container", {
 		eventElemSelector: ".scrollable"
+	})
+
+	portfolioSlide.onBeforeChange(function(curIndex, tarIndex, cur, tar) {
+		if (tarIndex === 1 && isFirstShowSlide.index1) {
+			createNavigationFn(beusablyData, beusablyPortfolio, beusablyBackgroundImgs)
+			isFirstShowSlide.index1 = false
+		} else if (tarIndex === 2 && isFirstShowSlide.index2) {
+			createNavigationFn(beusablyToolData, beusablyToolPortfolio, beusablyToolBackgroundImgs)
+			isFirstShowSlide.index2 = false
+		}
 	})
 
 	const portfolios = document.querySelectorAll("section.portfolio")
@@ -39,8 +54,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// create fortfolio Nav
 	createNavigationFn(beusableData, beusablePortfolio, beusableBackgroundImgs)
-	createNavigationFn(beusablyData, beusablyPortfolio, beusablyBackgroundImgs)
-	createNavigationFn(beusablyToolData, beusablyToolPortfolio, beusablyToolBackgroundImgs)
 
 	// desc toggle
 	portfolioDescButtons.forEach(function(button) {

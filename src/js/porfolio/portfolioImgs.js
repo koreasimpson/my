@@ -14,6 +14,8 @@ import beusableSegment from "../../assets/img/pf-beu/segment.png"
 import beusableSignin from "../../assets/img/pf-beu/signup.png"
 // import beusableSignup from "../../assets/img/pf-beu/signup.png"
 
+console.log("img js act")
+
 export const beusableBackgroundImgs = {
 	signin: beusableSignin,
 	dashboard: beusableDashbaord,
