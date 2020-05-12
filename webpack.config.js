@@ -13,11 +13,11 @@ module.exports = {
 		"portfolio/portfolio": "./src/js/portfolio.js"
 	},
 	output: {
-		path: path.resolve(__dirname, "build"),
+		path: path.resolve(__dirname, "docs"),
 		filename: "[name].js"
 	},
 	devServer: {
-		contentBase: path.join(__dirname, "build"),
+		contentBase: path.join(__dirname, "docs"),
 		publicPath: "/",
 		overlay: true,
 		stats: "errors-only"
@@ -66,8 +66,8 @@ module.exports = {
 			minify:
 				process.env.NODE_ENV === "production"
 					? {
-							collapseWhitespace: true, // 빈 공간(들여쓰기,띄어쓰기,줄바꿈) 제거
-							removeComments: true // 주석 제거
+							collapseWhitespace: true,
+							removeComments: true
 					  }
 					: false,
 			chunks: ["main/main"]
@@ -81,8 +81,8 @@ module.exports = {
 			minify:
 				process.env.NODE_ENV === "production"
 					? {
-							collapseWhitespace: true, // 빈 공간(들여쓰기,띄어쓰기,줄바꿈) 제거
-							removeComments: true // 주석 제거
+							collapseWhitespace: true,
+							removeComments: true
 					  }
 					: false,
 			chunks: ["portfolio/portfolio"]

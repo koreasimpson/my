@@ -1,7 +1,6 @@
 const createNavigationFn = (pageData, targetPortfolio, imgData) => {
 	const portfolioPageList = []
 	const navContainer = targetPortfolio.querySelector(".portfolio-navigation")
-
 	const pageImgWrapper = targetPortfolio.querySelector(".page-img-wrapper")
 	const pageImg = targetPortfolio.querySelector(".page-img")
 	pageImgWrapper.innerHTML = ""

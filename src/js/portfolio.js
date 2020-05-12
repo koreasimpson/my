@@ -1,14 +1,15 @@
+import "../scss/portfolio.scss"
+import "../lib/do-slide/do-slide.min.css"
+import "./common.js"
+
 import DoSlide from "do-slide"
-import { createNavigationFn } from "./porfolio/portfolioNavigation"
+import { createNavigationFn } from "./porfolio/portfolioNavigationNew"
+
 import {
 	beusableBackgroundImgs,
 	beusablyBackgroundImgs,
 	beusablyToolBackgroundImgs
 } from "./porfolio/portfolioImgs"
-
-import "../scss/portfolio.scss"
-import "../lib/do-slide/do-slide.min.css"
-import "./common.js"
 
 const jsonData = require("../assets/json/portfolio.json")
 const beusableData = jsonData.beusable
