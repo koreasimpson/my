@@ -29,17 +29,30 @@
 				<nav id="gnb">
 					<ul class="clearfix">
 						<li class="gnb-item"><a href="<%= path %>/">home</a></li>
-						<li class="gnb-item"><a href="<%= path %>/portfolio/">portfolio</a></li>
-						<li class="gnb-item study">
+						<li class="gnb-item item-portfolio">
+							<a href="#" class="open-popup-layer">portfolio</a>
+							<ul class="portfolio_list--wrap popup-layer arrow-top-center">
+								<li><a href="<%= path %>/portfolio/">경력기술서</a></li>
+								<li>
+									<a
+										href="https://90chanho.github.io/ufc/"
+										target="_blank"
+										rel="noopenner noreferrer"
+										>React 프로젝트</a
+									>
+								</li>
+							</ul>
+						</li>
+						<li class="gnb-item item-study">
 							<a href="#" class="open-popup-layer">Toy</a>
 							<ul class="study_list--wrap popup-layer arrow-top-right">
 								<li>
-									<a href="https://90chanho.github.io/web-game/" target="_blank"
+									<a
+										href="https://90chanho.github.io/web-game/"
+										target="_blank"
+										rel="noopenner noreferrer"
 										>mini web-game with TypeScript</a
 									>
-								</li>
-								<li>
-									<a href="https://90chanho.github.io/ufc/" target="_blank">UFC page with React</a>
 								</li>
 							</ul>
 						</li>

@@ -5,8 +5,10 @@ window.addEventListener("load", function() {
 	)
 
 	let body = document.querySelector("body")
-	let lnbItemStudy = document.querySelector(".gnb-item.study a")
+	let lnbItemStudy = document.querySelector(".gnb-item.item-study a")
+	let lnbItemPortfolio = document.querySelector(".gnb-item.item-portfolio a")
 	let studyList = document.querySelector(".study_list--wrap")
+	let portfoiloList = document.querySelector(".portfolio_list--wrap")
 
 	let allPopupLayer = document.querySelectorAll(".popup-layer")
 	let allOpenPopupLayer = document.querySelectorAll(".open-popup-layer")
@@ -15,20 +17,26 @@ window.addEventListener("load", function() {
 	document.querySelector("#pageLoading").classList.add("hide")
 	document.querySelector("#pageLoaded").classList.remove("hide")
 
-	// gnb item(study) show
-	lnbItemStudy.addEventListener("click", function(e) {
-		if (studyList.classList.contains("is-show")) {
-			studyList.classList.remove("is-show")
-		} else {
-			studyList.classList.add("is-show")
-		}
-	})
+	toggleGnbLayer = (eventTarget, layer) => {
+		eventTarget.addEventListener("click", function(e) {
+			closeAllPopupLayer()
+			if (layer.classList.contains("is-show")) {
+				layer.classList.remove("is-show")
+			} else {
+				layer.classList.add("is-show")
+			}
+		})
+	}
+
+	toggleGnbLayer(lnbItemStudy, studyList)
+	toggleGnbLayer(lnbItemPortfolio, portfoiloList)
 
 	allPopupLayer.forEach(function(item) {
 		item.addEventListener("click", function(e) {
 			e.stopPropagation()
 		})
 	})
+
 	allOpenPopupLayer.forEach(function(item) {
 		item.addEventListener("click", function(e) {
 			e.stopPropagation()
@@ -36,14 +44,14 @@ window.addEventListener("load", function() {
 		})
 	})
 
-	// all popup-layer close event
-	body.addEventListener("click", function(e) {
+	closeAllPopupLayer = () => {
 		allPopupLayer.forEach(function(item) {
 			item.classList.remove("is-show")
 		})
-	})
+	}
 
-	// close dimmed popup-layer
+	body.addEventListener("click", closeAllPopupLayer)
+
 	const dimmed = document.querySelector(".dimmed")
 	if (dimmed) {
 		const btnCloseDimmed = dimmed.querySelector(".btn-close-dimmed")
