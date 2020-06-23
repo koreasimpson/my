@@ -28,15 +28,28 @@ document.addEventListener("DOMContentLoaded", function() {
 	})
 
 	portfolioSlide.onBeforeChange(function(curIndex, tarIndex, cur, tar) {
-		if (tarIndex === 1 && isFirstShowSlide.index1) {
-			createNavigationFn(beusablyData, beusablyPortfolio, beusablyBackgroundImgs)
-			currentPortfolio = beusablyPortfolio
+		window.removeEventListener("keydown", keyboardTrap)
+		window.addEventListener("keydown", preventKeyboardEvent)
+		if (tarIndex === 1) {
+			isFirstShowSlide.index1 &&
+				createNavigationFn(beusablyData, beusablyPortfolio, beusablyBackgroundImgs)
 			isFirstShowSlide.index1 = false
+			currentPortfolio = beusablyPortfolio
 		} else if (tarIndex === 2 && isFirstShowSlide.index2) {
-			createNavigationFn(beusablyToolData, beusablyToolPortfolio, beusablyToolBackgroundImgs)
+			isFirstShowSlide.index2 &&
+				createNavigationFn(beusablyToolData, beusablyToolPortfolio, beusablyToolBackgroundImgs)
 			currentPortfolio = beusablyToolPortfolio
 			isFirstShowSlide.index2 = false
+		} else {
+			currentPortfolio = beusablePortfolio
 		}
+	})
+
+	portfolioSlide.onChanged(function(curIndex, lastIndex, cur, last) {
+		currentPortfolioIndex.textContent = curIndex + 1
+		window.removeEventListener("keydown", preventKeyboardEvent)
+		window.addEventListener("keydown", keyboardTrap)
+		cur.querySelector(".is-active button").focus()
 	})
 
 	const portfolios = document.querySelectorAll("section.portfolio")
@@ -49,12 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	const portfolioDescButtons = document.querySelectorAll(".btn-toggle-cover")
 
 	// set scrollable index text
-	// last
 	LastPortfolioIndex.textContent = portfolios.length
-	// current
-	portfolioSlide.onChanged(curIndex => {
-		currentPortfolioIndex.textContent = curIndex + 1
-	})
 
 	// create fortfolio Nav
 	createNavigationFn(beusableData, beusablePortfolio, beusableBackgroundImgs)
@@ -74,7 +82,7 @@ const gnbItemStudy = document.querySelector(".item-study .open-popup-layer")
 const gnbStudyListLastChild = gnbStudyListElement.querySelector("ul li:nth-last-child(1) a")
 const firstFocusNode = document.querySelector("#gnb .gnb-item:nth-child(1) a")
 
-window.addEventListener("keydown", e => {
+const keyboardTrap = e => {
 	const lastFocusNode = currentPortfolio.querySelector(
 		".portfolio-navigation li:nth-last-child(1) button"
 	)
@@ -102,4 +110,14 @@ window.addEventListener("keydown", e => {
 		e.preventDefault()
 		gnbLastItem.focus()
 	}
-})
+}
+
+const preventKeyboardEvent = e => {
+	e.preventDefault()
+	e.stopPropagation()
+}
+
+window.addEventListener("keydown", keyboardTrap)
+window.onbeforeunload = function() {
+	window.removeEventListener("keydown", keyboardTrap)
+}
