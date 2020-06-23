@@ -82,10 +82,21 @@ const setSelectedPageDescription = (
 	pageDescElement.innerHTML = ""
 
 	for (let desc in pageDescDetail) {
-		const paragraphElement = document.createElement("p")
-		const description = `${desc} : ${pageDescDetail[desc]}`
-		paragraphElement.textContent = description
-		pageDescElement.appendChild(paragraphElement)
+		if (desc === "pageDesc") {
+			const ulElement = document.createElement("ul")
+			for (let i = 0; i < pageDescDetail[desc].length; i++) {
+				const liElement = document.createElement("li")
+				const description = pageDescDetail[desc][i]
+				liElement.textContent = description
+				ulElement.appendChild(liElement)
+			}
+			pageDescElement.appendChild(ulElement)
+		} else {
+			const paragraphElement = document.createElement("p")
+			const description = `${desc} : ${pageDescDetail[desc]}`
+			paragraphElement.textContent = description
+			pageDescElement.appendChild(paragraphElement)
+		}
 	}
 }
 
