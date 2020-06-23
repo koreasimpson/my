@@ -91,6 +91,28 @@ const setSelectedPageDescription = (
 				ulElement.appendChild(liElement)
 			}
 			pageDescElement.appendChild(ulElement)
+		} else if (desc === "major") {
+			const majorContent = pageDescDetail[desc]["content"]
+			const buttonElement = document.createElement("button")
+			const dlElement = document.querySelector(".modal .popup-container .popup-content")
+			dlElement.innerHTML = ""
+			// major content
+			for (let i = 0; i < majorContent.length; i++) {
+				const dtElement = document.createElement("dt")
+				const descriptionList = majorContent[i].desc
+				dtElement.textContent = majorContent[i].title
+				dlElement.appendChild(dtElement)
+				// content desc
+				for (let j = 0; j < descriptionList.length; j++) {
+					const ddElement = document.createElement("dd")
+					const description = descriptionList[j]
+					ddElement.textContent = description
+					dlElement.appendChild(ddElement)
+				}
+			}
+			buttonElement.textContent = pageDescDetail[desc]["button"]
+			buttonElement.classList.add("open-modal")
+			pageDescElement.appendChild(buttonElement)
 		} else {
 			const paragraphElement = document.createElement("p")
 			const description = `${desc} : ${pageDescDetail[desc]}`

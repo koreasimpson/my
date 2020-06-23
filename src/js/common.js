@@ -53,11 +53,15 @@ window.addEventListener("load", function() {
 	body.addEventListener("click", closeAllPopupLayer)
 
 	const dimmed = document.querySelector(".dimmed")
+
 	if (dimmed) {
 		const btnCloseDimmed = dimmed.querySelector(".btn-close-dimmed")
+		const btnConfirmimmed = dimmed.querySelector(".confirm")
 		body.addEventListener("click", function(e) {
-			if (e.target === btnCloseDimmed) {
+			if (e.target === btnCloseDimmed || e.target === btnConfirmimmed) {
 				dimmed.classList.remove("is-show")
+			} else if (e.target.classList.contains("open-modal")) {
+				dimmed.classList.add("is-show")
 			}
 		})
 	}
