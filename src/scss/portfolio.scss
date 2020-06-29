@@ -76,7 +76,7 @@ body {
 	&.poaster {
 		.portfolio-view {
 			width: 80%;
-			height: 50%;
+			min-height: 70%;
 
 			.skeleton {
 				display: none;
