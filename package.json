@@ -8,16 +8,16 @@
 		"start": "webpack-dev-server --progress",
 		"build": "NODE_ENV=production webpack"
 	},
-	"homepage": "https://90chanho.github.io/my",
+	"homepage": "https://koreasimpson.github.io/my",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/90chanho/portfolio.git"
+		"url": "git+https://github.com/koreasimpson/portfolio.git"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/90chanho/portfolio/issues"
+		"url": "https://github.com/koreasimpson/portfolio/issues"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.9.0",
